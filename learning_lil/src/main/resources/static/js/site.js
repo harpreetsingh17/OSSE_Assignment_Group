@@ -24,13 +24,6 @@ function setInitialDate(){
 
 };
 
-function reloadPageForDateSelection(){
-    var selectedDate = document.getElementById('datepicker').value;
-    var redirectLink = window.location.protocol + "//" + window.location.host + window.location.pathname + '?date=' + selectedDate;
-    console.log('Redirecting to: ' + redirectLink);
-    window.location.href = redirectLink;
-};
-
 function formatDate(input) {
     var dateFormat = 'yyyy-mm-dd';
     var parts = input.match(/(\d+)/g),
