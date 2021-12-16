@@ -17,6 +17,9 @@ public class DateUtils {
                 date = new Date();
             }
         }
+        else{
+            date = new Date();
+        }
         return date;
     }
 }
