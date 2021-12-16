@@ -24,7 +24,8 @@ public class RoomReservationWebController {
 
     @GetMapping
     public String getReservations(@RequestParam(value = "date", required = false)String dateString, Model model){
-        List<RoomReservation> roomReservationList = this.reservationService.getRoomReservationList(dateString);
+        Date date = DateUtils.createDateFromDateString(dateString);
+        List<RoomReservation> roomReservationList = this.reservationService.getRoomReservationList(date);
         model.addAttribute(roomReservationList);
         return "reservations";
     }
