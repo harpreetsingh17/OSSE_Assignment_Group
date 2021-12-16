@@ -55,6 +55,7 @@ public class ReservationService {
                 if (o1.getRoomName().equals(o2.getRoomName())){
                     return o1.getRoomNumber().compareTo(o2.getRoomNumber());
                 }
+                return o1.getRoomName().compareTo(o2.getRoomName());
             }
         });
         return roomReservations;
