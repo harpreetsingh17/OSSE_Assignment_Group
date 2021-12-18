@@ -28,4 +28,12 @@ public class GuestWebController {
         model.addAttribute(guestStr, guests);
         return guestStr;
     }
+    
+    @PostMapping("/addGues")
+    public String addGuest(Model model){
+    String guestStr = "guests";
+    List<Guest> guests = this.reservationService.getHotelGuests();
+    model.addAttribute(guestStr, guests);
+    return guestStr;
+    }
 }
