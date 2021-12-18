@@ -29,4 +29,12 @@ public class RoomReservationWebController {
         model.addAttribute(roomReservationList);
         return "reservations";
     }
+    
+   @PostMapping("/addreservation")
+    public String addReservations(@RequestParam(value = "date", required = false)String dateString, Model model){
+        Date date = DateUtils.createDateFromDateString(dateString);
+        List<RoomReservation> roomReservationList = this.reservationService.getRoomReservationList(date);
+        model.addAttribute(roomReservationList);
+        return "reservations";
+    }
 }
