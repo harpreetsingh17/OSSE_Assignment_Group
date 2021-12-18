@@ -23,8 +23,9 @@ public class GuestWebController {
 
     @GetMapping
     public String getGuests(Model model){
+        String guestStr = "guests";
         List<Guest> guests = this.reservationService.getHotelGuests();
-        model.addAttribute("guests", guests);
-        return "guests";
+        model.addAttribute(guestStr, guests);
+        return guestStr;
     }
 }
